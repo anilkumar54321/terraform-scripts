@@ -228,3 +228,26 @@ git push origin master - to push to master
 
 git checkout <branch name> to move to a branch
 git push origin <branch name > to push to a branch
+
+
+----
+git clone <URL> # this clones/copys the repository to shell
+
+cd repo_name/
+
+git init #initialization
+
+git branch # shows the current branch
+
+git branch feature #creates new branch named feature
+
+git checkout feature  #moves to mentioned branch
+
+you can add all your files/code after navigating to the dir
+
+git add . # add all files from this dir
+
+git commit -m "initial commit" # commits the code
+git push origin feature #pushes the code
+
+
