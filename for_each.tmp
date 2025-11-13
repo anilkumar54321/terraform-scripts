@@ -202,3 +202,29 @@ How the secretes are managed in terraform?
 1.using sensitive field in TF
 2.secret manager
 3.dynamic secrets generated using resource
+-----------
+
+
+Source repository:
+gcloud source repos clone dsb-gcp-landing-zone-repo --project=terraform-dsb
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+To use it:
+gcloud auth activate-service-account --key-file="give file path here"
+Ex:
+
+gcloud auth activate-service-account --key-file="/home/my-account/eur-infra-modernization-6b7e793fcdf1.json"
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Steps from terminal:
+git config --global user.name "Sam Smith"
+git config --global user.email sam@example.com
+git add .
+git commit -m "any message to display"
+gcloud builds list
+gcloud build[paste logid] >>errors can be viewed with this
+
+git push origin master - to push to master
+
+git checkout <branch name> to move to a branch
+git push origin <branch name > to push to a branch
