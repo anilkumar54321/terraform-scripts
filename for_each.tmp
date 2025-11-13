@@ -1,0 +1,60 @@
+When for_each is used in two resource give reference like shown below
+
+service_account = google_service_account.service_account["composer_sa"].email
+
+Note: Here composer_sa is input key resource in dev.tfvars  
+
+Ex:
+
+service_accounts = {
+  composer_sa = {
+    composer_service_account = "composer-sa"
+    display_name             = "This service is using for test composer"
+  }
+}
+------
+GitHub is rolling out an update to its Ubuntu-latest tag for hosted runners. This update introduces a significant change that requires your immediate attention to avoid pipeline disruptions.
+ 
+What’s Changing?
+Starting December 5, 2024, GitHub will begin transitioning the Ubuntu-latest tag to point to Ubuntu 24.04.
+Terraform is no longer pre-installed in the new Ubuntu 24.04 image.
+This transition will be complete by January 17, 2025.
+ 
+How Does This Impact Us?
+Many of our GitHub workflows currently use the Ubuntu-latest tag.
+Pipelines depending on Terraform will fail unless Terraform is explicitly installed.
+ 
+Steps to Prevent Pipeline Failures
+To ensure a smooth transition, update your pipelines as follows:
+Add Terraform Installation Step: Include the following step before the Terraform init step in your pipeline:
+- name: Terraform Installation
+   uses: hashicorp/setup-terraform@v3
+   with:
+      terraform_wrapper: false
+ 
+ 
+ ------
+enable cloud storage api and wait fr 5-10 mins and run the build
+
+
+
+other
+
+here is a issue or maybe a bug with cloud storage api where its service agent which looks like this 
+
+service-123456789876@gs-project-accounts.iam.gserviceaccount.com
+ doesn't seem to exist even after enabling the api. 
+
+
+Solution:
+
+For enabling your service account you need to make a get request to it using the following link 
+
+https://cloud.google.com/storage/docs/json_api/v1/projects/serviceAccount/get
+
+Click on try it!
+
+Provide your project id and project number and execute it 
+
+It will hit the api and get you sa details and after that somehow your service agent will start existing.
+-----
