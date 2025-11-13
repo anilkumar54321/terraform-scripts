@@ -1,0 +1,6 @@
+resource "google_service_account_iam_member" "wif-sa" {
+  #   for_each           = var.sa_mapping
+   service_account_id = "projects/<prjid>/serviceAccounts/<project-service-account@x.iam.gserviceaccount.com>"
+   role               = "roles/iam.workloadIdentityUser"
+   member             = "principalSet://iam.googleapis.com/projects/<prj number>/locations/global/workloadIdentityPools/pool-github-actions/attribute.repository/<repo rg name>/<repo name>"
+}
