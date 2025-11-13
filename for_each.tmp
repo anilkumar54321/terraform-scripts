@@ -58,3 +58,147 @@ Provide your project id and project number and execute it
 
 It will hit the api and get you sa details and after that somehow your service agent will start existing.
 -----
+
+
+
+Terraform syntax's
+
+1. Resources:
+Definition: Describes the infrastructure objects you want to manage, such as virtual machines, databases, or networks.
+Simple Explanation: It's like telling Terraform what resources you want to create, like specifying the type of building blocks you need for your infrastructure.
+
+2. Variables:
+Definition: Parameters that you can use to customize your Terraform configurations, allowing for flexibility and reusability.
+Simple Explanation: It's like placeholders that let you easily change specific values without rewriting your entire configuration.
+
+3. Outputs:
+Definition: Values that are exposed after applying your Terraform configuration, useful for retrieving information about your infrastructure.
+Simple Explanation: It's like displaying important information after building something, like showing the dimensions of a completed building.
+
+4. Providers:
+Definition: Plugins that Terraform uses to interact with different cloud or infrastructure providers, such as AWS, Azure, or Google Cloud.
+Simple Explanation: It's like selecting the toolbox you need for the job, choosing the tools (providers) that help you build your infrastructure.
+
+5. Modules:
+Definition: Reusable units of Terraform configuration that encapsulate a set of resources and configurations.
+Simple Explanation: It's like building blocks that you can use over and over again, containing predefined configurations for common tasks.
+
+6. Comments:
+Definition: Text within the configuration file that is ignored by Terraform, used for documentation or explanatory notes.
+Simple Explanation: It's like leaving notes to yourself or others, explaining what different parts of your configuration do.
+
+7. Expressions:
+Definition: Dynamic references used to interpolate values within Terraform configurations, such as variables or attributes of resources.
+Simple Explanation: It's like filling in the blanks with actual values, replacing placeholders with real data to customize your configurations.
+
+
+
+
+
+Git Repo's
+
+1. **Git:**
+   - Definition: A distributed version control system used for tracking changes in source code during software development.
+   - Simple Explanation: It's like a time machine for your code, allowing you to track changes, collaborate with others, and revert to previous versions if needed.
+ 
+2. **Repository (Repo):**
+   - Definition: A storage location where your Git projects and their related files and history are stored.
+   - Simple Explanation: It's like a folder where you keep all your project files, along with a log of all the changes you've made.
+ 
+3. **Remote Repository:**
+   - Definition: A repository hosted on a server or online platform, such as GitHub, GitLab, or Bitbucket, that allows collaboration and sharing among team members.
+   - Simple Explanation: It's like a shared folder accessible to multiple people, allowing everyone to contribute to the project from anywhere.
+ 
+4. **Local Repository:**
+   - Definition: A repository stored on your local machine where you can work on your project without needing an internet connection.
+   - Simple Explanation: It's like having a copy of the project on your computer, allowing you to make changes and experiment without affecting the shared version.
+ 
+5. **Clone:**
+   - Definition: Creating a copy of a remote repository on your local machine, allowing you to work on the project locally.
+   - Simple Explanation: It's like downloading a copy of a folder from the internet onto your computer, giving you access to the files and history.
+ 
+6. **Branch:**
+   - Definition: A separate line of development within a repository, allowing you to work on new features or bug fixes without affecting the main codebase.
+   - Simple Explanation: It's like working on a separate copy of the project, where you can experiment without worrying about breaking the main version.
+ 
+7. **Commit:**
+   - Definition: Saving changes to files in a Git repository along with a descriptive message explaining the changes.
+   - Simple Explanation: It's like taking a snapshot of your project at a specific moment, recording what files were changed and why.
+
+
+Workflow's
+In Google Cloud Platform (GCP), a workflow typically refers to the automation of tasks or processes using a combination of GCP services. Here's a simple explanation of a GCP workflow:
+ 
+1. **Definition:**
+   - A sequence of steps or tasks automated using GCP services to accomplish a specific goal or process.
+ 
+2. **Components:**
+   - **Cloud Services:** Utilize various GCP services such as Compute Engine, Cloud Storage, BigQuery, Cloud Functions, etc., to perform different tasks within the workflow.
+   - **Orchestration Tools:** Use tools like Cloud Composer (managed Apache Airflow), Cloud Workflows, or even Google Cloud Functions for orchestrating and coordinating tasks within the workflow.
+   - **Monitoring and Logging:** Employ services like Stackdriver (now Google Cloud Operations) for monitoring and logging to track the execution of workflow steps and diagnose issues.
+   - **Identity and Access Management (IAM):** Implement IAM policies to control access to resources and ensure security within the workflow.
+ 
+3. **Examples of GCP Workflows:**
+   - **Data Processing Pipeline:** Ingest data from various sources into BigQuery, process and analyze it using Dataflow or Dataproc, and store the results in Cloud Storage.
+   - **Continuous Integration/Continuous Deployment (CI/CD):** Automate the build, test, and deployment process of applications using Cloud Build, Container Registry, and Kubernetes Engine.
+   - **Serverless Application Workflow:** Trigger Cloud Functions or Cloud Run services in response to events from Cloud Storage, Pub/Sub, or Firestore to perform specific actions.
+   - **ETL (Extract, Transform, Load) Workflow:** Extract data from sources like databases or files, transform it using Dataflow or Cloud Dataprep, and load it into a data warehouse like BigQuery.
+ 
+4. **Benefits:**
+   - **Automation:** Reduces manual intervention and automates repetitive tasks, increasing efficiency and reducing errors.
+   - **Scalability:** GCP services scale automatically based on demand, allowing workflows to handle varying workloads.
+   - **Flexibility:** GCP provides a wide range of services and tools, offering flexibility in designing workflows tailored to specific use cases.
+   - **Reliability:** GCP services are designed for high availability and reliability, ensuring that workflows run smoothly without interruptions.
+ 
+Overall, GCP workflows enable organizations to streamline processes, improve productivity, and leverage the scalability and reliability of cloud computing resources.
+
+
+Terraform FLOW
+
+The flow of Terraform involves several stages in its lifecycle. Here's an overview of the different stages of the Terraform cycle:
+ 
+1. **Initialization (terraform init):**
+   - Terraform initializes a working directory containing Terraform configuration files.
+   - It downloads and installs provider plugins specified in the configuration files.
+   - This stage prepares the environment for creating and managing infrastructure.
+ 
+2. **Configuration (terraform plan):**
+   - Terraform examines the configuration files to determine what resources need to be created, updated, or deleted.
+   - It generates an execution plan outlining the actions it will take to achieve the desired state.
+   - This stage helps users understand the impact of their changes before applying them.
+ 
+3. **Planning (terraform plan):**
+   - Terraform generates an execution plan based on the configuration files and any state data available.
+   - The plan includes a list of actions Terraform will perform to achieve the desired state.
+   - It also identifies any changes to existing resources and any resources that will be destroyed.
+   - This stage allows users to review and validate proposed changes before applying them.
+ 
+4. **Execution (terraform apply):**
+   - Terraform applies the execution plan generated during the planning stage.
+   - It creates, updates, or deletes resources as necessary to achieve the desired state.
+   - Terraform interacts with the selected providers to execute API calls and manage resources.
+   - This stage implements the changes to the infrastructure according to the plan.
+ 
+5. **Monitoring (terraform show):**
+   - Terraform provides visibility into the current state of the infrastructure by displaying the Terraform state.
+   - Users can use the `terraform show` command to view details about resources managed by Terraform.
+   - This stage helps users understand the current state of their infrastructure and track changes over time.
+ 
+6. **Destroy (terraform destroy):**
+   - Terraform destroys all resources defined in the configuration files.
+   - It executes the destruction plan to delete resources and clean up the infrastructure.
+   - This stage is useful for decommissioning environments or cleaning up resources that are no longer needed.
+ 
+These stages constitute the lifecycle of Terraform, from initializing a working directory to managing infrastructure changes and eventually destroying resources. Following this cycle ensures consistency and reliability in managing infrastructure as code using Terraform.
+
+
+Which file we will write the requirements?
+variables.tf or ENV.auto.tfvars 
+
+What is the privileges needed to create the GCP resource using terraform?
+using console whatever permissions we require as a user same must be given to SA if we r doing through github
+
+How the secretes are managed in terraform?
+1.using sensitive field in TF
+2.secret manager
+3.dynamic secrets generated using resource
