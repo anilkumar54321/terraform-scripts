@@ -1,0 +1,5 @@
+git config --global http.sslverify false
+then git push
+git config --global http.sslverify true
+
+Note: This solution opens you to attacks like man-in-the-middle attacks. Therefore turn on verification again as soon as possible:
